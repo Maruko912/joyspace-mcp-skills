@@ -42,6 +42,8 @@ navigate_page → url: https://joyspace.jd.com/h/receive
 
 如果跳转到 `authme.jd.com` 登录页，提示用户先登录。
 
+> **MCP 页面关闭处理**：如果 MCP 报错 "The selected page has been closed"，不要反复尝试 navigate，直接用 `new_page` 重新打开目标 URL。
+
 ### 步骤 2：点击"新建"按钮
 
 在 snapshot 中找到 `StaticText "新建"` 对应的可点击元素，点击后弹出下拉菜单。

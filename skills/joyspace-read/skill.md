@@ -34,6 +34,8 @@ navigate_page → url: <JoySpace文档URL>
 
 如果跳转到 `authme.jd.com` 登录页，提示用户先登录。
 
+> **MCP 页面关闭处理**：如果 MCP 报错 "The selected page has been closed"，不要反复尝试 navigate，直接用 `new_page` 重新打开目标 URL。
+
 ### 步骤 2：用文本 snapshot 提取内容（非截图）
 
 **核心原则：使用 `take_snapshot` 读取文本，不要用 `take_screenshot` 截图来读内容。**
@@ -65,6 +67,12 @@ if (container) {
 const container = document.querySelector('.doc-page-container');
 container.scrollTop += container.clientHeight;
 ```
+
+### 步骤 3.5：1:1 保留原文
+
+> **核心原则：必须先完整保留原文内容，再进行任何总结或改写。**
+
+将所有 snapshot 提取到的文本视为"原文"。后续无论是总结、改写还是多轮修改，都必须严格对照原文逐条核实数字、专有名词和状态描述（如"调研中"vs"已完成"）。**不要在自己的上一版总结上迭代修改**，每次修改都回到原文核对。
 
 ### 步骤 4：合并与理解内容
 
