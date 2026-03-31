@@ -58,13 +58,3 @@ cp -r skills/joyspace-pdf ~/.claude/skills/
 /joyspace-pdf https://joyspace.jd.com/pages/xxxxx
 ```
 
-## 技术要点
-
-- JoySpace 使用 **Slate.js** 编辑器，采用虚拟光标机制（`contentEditable="false"`），需要通过 JS dispatchEvent 定位光标
-- 长内容写入使用 **ClipboardEvent paste** 一次性粘贴，避免逐行输入导致的内容乱序
-- 文档使用虚拟渲染，阅读长文档需要滚动后多次取 snapshot
-- 新建文档必须通过首页 UI 流程（首页 → 新建 → 文档 → 空白文档），直接构造 URL 会报错
-
-## License
-
-MIT
